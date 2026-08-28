@@ -1,30 +1,189 @@
-Calendrier partagé
-📅 Le calendrier des sorties
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planning TR94 2026–2027</title>
 
-Ce calendrier est mis à jour par l'organisateur.
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-🍎 iPhone / iPad
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      min-height: 100vh;
+    }
 
-Pour ajouter le calendrier à Apple Calendrier :
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
 
-Ouvre Réglages
-Va dans Apps → Calendrier → Comptes Calendrier
-Choisis Ajouter un compte → Autre
-Choisis Ajouter un calendrier avec abonnement
-Colle l'adresse du calendrier fournie par l'organisateur
-Valide
-🤖 Android
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px 24px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
 
-Si tu utilises Google Calendar :
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin: 0 0 10px;
+    }
 
-Ouvre Google Calendar sur un ordinateur
-Dans Autres agendas, clique sur +
-Choisis À partir de l'URL
-Colle l'adresse du calendrier fournie par l'organisateur
-Valide
+    .subtitle {
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
 
-Le calendrier apparaîtra ensuite dans ton application Google Calendar.
+    .button {
+      display: block;
+      width: 100%;
+      padding: 16px 18px;
+      margin: 12px 0;
+      border-radius: 12px;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      background: #111827;
+      color: white;
+    }
 
-🔄 Mises à jour automatiques
+    .button.secondary {
+      background: #e5e7eb;
+      color: #111827;
+    }
 
+    .section {
+      margin-top: 28px;
+    }
 
+    .section h2 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .section p {
+      line-height: 1.6;
+      color: #4b5563;
+    }
+
+    .notice {
+      margin-top: 25px;
+      padding: 15px;
+      background: #f3f4f6;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #4b5563;
+    }
+
+    .success {
+      display: none;
+      text-align: center;
+      margin-top: 10px;
+      color: #166534;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="card">
+
+    <h1>📅 Planning TR94</h1>
+
+    <div class="subtitle">
+      Saison 2026–2027<br>
+      Ajoutez le calendrier à votre téléphone.
+    </div>
+
+    <a class="button"
+       href="webcal://calendar.google.com/calendar/ical/b31b2eb8b23ec2b0c2096cb1cf20fde73184a7114420a950b1beb9a291b015a8%40group.calendar.google.com/public/basic.ics">
+      🍎 Ajouter sur iPhone / iPad
+    </a>
+
+    <a class="button secondary"
+       href="https://calendar.google.com/calendar/">
+      🤖 Ajouter sur Android / Google Calendar
+    </a>
+
+    <button class="button secondary" onclick="copyCalendarLink()">
+      📋 Copier le lien du calendrier
+    </button>
+
+    <div id="success" class="success">
+      ✓ Lien copié !
+    </div>
+
+    <div class="section">
+      <h2>🔄 Les mises à jour</h2>
+      <p>
+        Une fois le calendrier ajouté, les modifications du planning
+        seront récupérées automatiquement par votre application
+        de calendrier.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>🔒 Lecture seule</h2>
+      <p>
+        Vous pourrez consulter le planning, mais vous ne pourrez pas
+        modifier les événements.
+      </p>
+    </div>
+
+    <div class="notice">
+      <strong>iPhone :</strong> cliquez sur le bouton ci-dessus et
+      acceptez l'abonnement au calendrier.<br><br>
+
+      <strong>Android :</strong> l'ajout d'un calendrier externe dans
+      Google Calendar se fait généralement depuis Google Calendar sur
+      ordinateur. Une fois ajouté à votre compte Google, il sera
+      disponible sur votre téléphone.
+    </div>
+
+  </div>
+
+  <footer>
+    Planning TR94 · 2026–2027
+  </footer>
+</div>
+
+<script>
+  const calendarLink =
+    "https://calendar.google.com/calendar/ical/b31b2eb8b23ec2b0c2096cb1cf20fde73184a7114420a950b1beb9a291b015a8%40group.calendar.google.com/public/basic.ics";
+
+  function copyCalendarLink() {
+    navigator.clipboard.writeText(calendarLink).then(function() {
+      document.getElementById("success").style.display = "block";
+
+      setTimeout(function() {
+        document.getElementById("success").style.display = "none";
+      }, 2500);
+    });
+  }
+</script>
+
+</body>
+</html>
