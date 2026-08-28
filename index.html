@@ -1,8 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7fb">
+
   <title>Planning TR94 2026–2027</title>
 
   <style>
@@ -12,43 +15,70 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
       background: #f5f7fb;
       color: #1f2937;
-      min-height: 100vh;
     }
 
     .container {
       max-width: 600px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 24px 16px 40px;
     }
 
     .card {
-      background: white;
-      border-radius: 20px;
-      padding: 30px 24px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 28px 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 48px;
+      margin-bottom: 8px;
     }
 
     h1 {
       text-align: center;
       font-size: 28px;
-      margin: 0 0 10px;
+      margin: 0;
+      color: #111827;
     }
 
     .subtitle {
       text-align: center;
       color: #6b7280;
-      margin-bottom: 30px;
+      margin: 10px 0 28px;
       line-height: 1.5;
+      font-size: 16px;
+    }
+
+    .device {
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .device h2 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .device p {
+      color: #4b5563;
+      line-height: 1.55;
+      margin: 8px 0 14px;
+      font-size: 15px;
     }
 
     .button {
       display: block;
       width: 100%;
-      padding: 16px 18px;
-      margin: 12px 0;
+      padding: 15px 16px;
+      margin: 10px 0 0;
       border-radius: 12px;
       text-decoration: none;
       text-align: center;
@@ -61,31 +91,29 @@
     }
 
     .button.secondary {
-      background: #e5e7eb;
+      background: #eef0f3;
       color: #111827;
     }
 
-    .section {
-      margin-top: 28px;
-    }
-
-    .section h2 {
-      font-size: 19px;
-      margin-bottom: 8px;
-    }
-
-    .section p {
-      line-height: 1.6;
+    .steps {
+      margin: 12px 0 0;
+      padding-left: 22px;
       color: #4b5563;
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .steps li {
+      margin-bottom: 7px;
     }
 
     .notice {
-      margin-top: 25px;
-      padding: 15px;
+      margin-top: 22px;
+      padding: 16px;
       background: #f3f4f6;
-      border-radius: 12px;
+      border-radius: 14px;
       font-size: 14px;
-      line-height: 1.5;
+      line-height: 1.55;
       color: #4b5563;
     }
 
@@ -95,95 +123,227 @@
       margin-top: 10px;
       color: #166534;
       font-size: 14px;
+      font-weight: 600;
+    }
+
+    .sync {
+      margin-top: 22px;
+      padding: 18px;
+      border-radius: 16px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .sync h2 {
+      font-size: 19px;
+      margin: 0 0 8px;
+    }
+
+    .sync p {
+      margin: 0;
+      color: #4b5563;
+      line-height: 1.55;
+      font-size: 15px;
     }
 
     footer {
       text-align: center;
-      margin-top: 25px;
+      margin-top: 22px;
       font-size: 13px;
       color: #9ca3af;
+    }
+
+    @media (max-width: 400px) {
+      .container {
+        padding: 12px 10px 30px;
+      }
+
+      .card {
+        padding: 24px 16px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<div class="container">
-  <div class="card">
+  <div class="container">
 
-    <h1>📅 Planning TR94</h1>
+    <div class="card">
 
-    <div class="subtitle">
-      Saison 2026–2027<br>
-      Ajoutez le calendrier à votre téléphone.
-    </div>
+      <div class="logo">📅</div>
 
-    <a class="button"
-       href="webcal://calendar.google.com/calendar/ical/b31b2eb8b23ec2b0c2096cb1cf20fde73184a7114420a950b1beb9a291b015a8%40group.calendar.google.com/public/basic.ics">
-      🍎 Ajouter sur iPhone / iPad
-    </a>
+      <h1>Planning TR94</h1>
 
-    <a class="button secondary"
-       href="https://calendar.google.com/calendar/">
-      🤖 Ajouter sur Android / Google Calendar
-    </a>
+      <div class="subtitle">
+        Saison 2026–2027<br>
+        Ajoutez le planning à votre calendrier.
+      </div>
 
-    <button class="button secondary" onclick="copyCalendarLink()">
-      📋 Copier le lien du calendrier
-    </button>
 
-    <div id="success" class="success">
-      ✓ Lien copié !
-    </div>
+      <!-- iPHONE -->
 
-    <div class="section">
-      <h2>🔄 Les mises à jour</h2>
-      <p>
-        Une fois le calendrier ajouté, les modifications du planning
-        seront récupérées automatiquement par votre application
-        de calendrier.
-      </p>
-    </div>
+      <div class="device">
 
-    <div class="section">
-      <h2>🔒 Lecture seule</h2>
-      <p>
-        Vous pourrez consulter le planning, mais vous ne pourrez pas
+        <h2>🍎 iPhone / iPad</h2>
+
+        <p>
+          Vous utilisez Apple Calendrier ?
+          Ajoutez directement le planning à votre appareil.
+        </p>
+
+        <a
+          class="button"
+          href="webcal://calendar.google.com/calendar/ical/b31b2eb8b23ec2b0c2096cb1cf20fde73184a7114420a950b1beb9a291b015a8%40group.calendar.google.com/public/basic.ics"
+        >
+          Ajouter sur iPhone / iPad
+        </a>
+
+      </div>
+
+
+      <!-- ANDROID -->
+
+      <div class="device">
+
+        <h2>🤖 Android</h2>
+
+        <p>
+          Si vous utilisez Google Calendar, l'ajout d'un calendrier
+          externe se fait depuis Google Calendar sur ordinateur.
+        </p>
+
+        <ol class="steps">
+          <li>Copiez l'adresse du calendrier ci-dessous.</li>
+          <li>Ouvrez Google Calendar sur un ordinateur.</li>
+          <li>
+            Dans <strong>Autres agendas</strong>, cliquez sur
+            <strong>+</strong>.
+          </li>
+          <li>
+            Choisissez <strong>À partir de l'URL</strong>.
+          </li>
+          <li>Collez l'adresse du calendrier.</li>
+          <li>Validez.</li>
+        </ol>
+
+        <button
+          class="button secondary"
+          onclick="copyCalendarLink()"
+        >
+          📋 Copier l'adresse du calendrier
+        </button>
+
+        <div id="success" class="success">
+          ✓ Adresse copiée !
+        </div>
+
+      </div>
+
+
+      <!-- AUTRES APPLICATIONS -->
+
+      <div class="device">
+
+        <h2>📱 Autre application Android</h2>
+
+        <p>
+          Certaines applications de calendrier Android permettent
+          d'ajouter directement un calendrier Internet ou au format ICS.
+        </p>
+
+        <button
+          class="button secondary"
+          onclick="copyCalendarLink()"
+        >
+          📋 Copier l'adresse du calendrier
+        </button>
+
+        <p>
+          Collez ensuite cette adresse dans l'option permettant
+          d'ajouter un calendrier Internet, distant ou ICS.
+        </p>
+
+      </div>
+
+
+      <!-- SYNCHRONISATION -->
+
+      <div class="sync">
+
+        <h2>🔄 Et après ?</h2>
+
+        <p>
+          Une fois le calendrier ajouté, vous n'avez plus rien à faire.
+          Les modifications du planning effectuées par l'organisateur
+          seront récupérées automatiquement par votre application
+          de calendrier.
+        </p>
+
+      </div>
+
+
+      <!-- LECTURE SEULE -->
+
+      <div class="notice">
+
+        <strong>ℹ️ Calendrier en lecture seule</strong><br><br>
+
+        Vous pouvez consulter le planning, mais vous ne pouvez pas
         modifier les événements.
-      </p>
+        
+      </div>
+
     </div>
 
-    <div class="notice">
-      <strong>iPhone :</strong> cliquez sur le bouton ci-dessus et
-      acceptez l'abonnement au calendrier.<br><br>
 
-      <strong>Android :</strong> l'ajout d'un calendrier externe dans
-      Google Calendar se fait généralement depuis Google Calendar sur
-      ordinateur. Une fois ajouté à votre compte Google, il sera
-      disponible sur votre téléphone.
-    </div>
+    <footer>
+      Planning TR94 · Saison 2026–2027
+    </footer>
 
   </div>
 
-  <footer>
-    Planning TR94 · 2026–2027
-  </footer>
-</div>
 
-<script>
-  const calendarLink =
-    "https://calendar.google.com/calendar/ical/b31b2eb8b23ec2b0c2096cb1cf20fde73184a7114420a950b1beb9a291b015a8%40group.calendar.google.com/public/basic.ics";
+  <script>
 
-  function copyCalendarLink() {
-    navigator.clipboard.writeText(calendarLink).then(function() {
-      document.getElementById("success").style.display = "block";
+    const calendarLink =
+      "https://calendar.google.com/calendar/ical/b31b2eb8b23ec2b0c2096cb1cf20fde73184a7114420a950b1beb9a291b015a8%40group.calendar.google.com/public/basic.ics";
 
-      setTimeout(function() {
-        document.getElementById("success").style.display = "none";
-      }, 2500);
-    });
-  }
-</script>
+
+    function copyCalendarLink() {
+
+      navigator.clipboard.writeText(calendarLink)
+        .then(function() {
+
+          const message =
+            document.getElementById("success");
+
+          message.style.display = "block";
+
+          setTimeout(function() {
+
+            message.style.display = "none";
+
+          }, 2500);
+
+        })
+        .catch(function() {
+
+          alert(
+            "Impossible de copier automatiquement l'adresse. " +
+            "Veuillez la copier depuis votre navigateur."
+          );
+
+        });
+
+    }
+
+  </script>
 
 </body>
 </html>
+```
